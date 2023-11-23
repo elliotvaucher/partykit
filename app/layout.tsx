@@ -2,11 +2,11 @@ import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import '../styles/globals.css';
 
-const title = 'Twitter Bio Generator';
-const description = 'Generate your next Twitter bio in seconds.';
+const title = 'Générateur de fêtes d\'anniversaire';
+const description = 'Organisez la fête d\'anniversaire de vos rêves en un clic';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://twitterbio.io'),
+  metadataBase: new URL('https://partykit.ch'),
   title,
   description,
   openGraph: {

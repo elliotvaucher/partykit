@@ -20,14 +20,7 @@ export async function POST(req: Request) {
     messages: [
       {
         role: 'user',
-        content: `Generate 2 ${vibe} twitter biographies with no hashtags and clearly labeled "1." and "2.". ${
-          vibe === 'Funny'
-            ? "Make sure there is a joke in there and it's a little ridiculous."
-            : null
-        }
-          Make sure each generated biography is less than 160 characters, has short sentences that are found in Twitter bios, and base them on this context: ${bio}${
-          bio.slice(-1) === '.' ? '' : '.'
-        }`,
+        content: `Générez un plan de fête d'anniversaire pour enfants complet basé sur la description de la fête : ${bio}. Incluez un résumé de l'événement, des recettes et boissons, des idées de déguisements, des idées de jeux, une liste de courses, et une playlist musicale. Créez également un message d'invitation. Assurez-vous que le plan soit détaillé, créatif et adapté aux fêtes pour enfants.`,
       },
     ],
   });

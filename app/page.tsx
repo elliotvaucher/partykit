@@ -45,7 +45,7 @@ export default function Page() {
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
         <a
           className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-5"
-          href="https://github.com/Nutlope/twitterbio"
+          href="https://github.com/elliotvaucher/partykit"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -53,9 +53,9 @@ export default function Page() {
           <p>Star on GitHub</p>
         </a>
         <h1 className="sm:text-6xl text-4xl max-w-[708px] font-bold text-slate-900">
-          Generate your next Twitter bio using chatGPT
+          Votre fête d'anniversaire en un clic.
         </h1>
-        <p className="text-slate-500 mt-5">47,118 bios generated so far.</p>
+        <p className="text-slate-500 mt-5">47,118 anniversaires organisés.</p>
         <form className="max-w-xl w-full" onSubmit={onSubmit}>
           <div className="flex mt-10 items-center space-x-3">
             <Image
@@ -66,9 +66,9 @@ export default function Page() {
               className="mb-5 sm:mb-0"
             />
             <p className="text-left font-medium">
-              Copy your current bio{' '}
+              Décrivez la fête que vous souhaitez organiser{' '}
               <span className="text-slate-500">
-                (or write a few sentences about yourself)
+                (le nom et l'âge de votre enfant, son film préféré, sa passion, le nombre d'invités.)
               </span>
               .
             </p>
@@ -79,12 +79,12 @@ export default function Page() {
             rows={4}
             className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black my-5"
             placeholder={
-              'e.g. Senior Developer Advocate @vercel. Tweeting about web development, AI, and React / Next.js. Writing nutlope.substack.com.'
+              'e.g. Marc a 10 ans et adore les dinosaures. Il aimerait inviter 10 amis à son anniversaire.'
             }
           />
           <div className="flex mb-5 items-center space-x-3">
             <Image src="/2-black.png" width={30} height={30} alt="1 icon" />
-            <p className="text-left font-medium">Select your vibe.</p>
+            <p className="text-left font-medium">Sélectionnez l'ambiance.</p>
           </div>
           <div className="block">
             <DropDown vibe={vibe} setVibe={(newVibe) => setVibe(newVibe)} />
@@ -95,7 +95,7 @@ export default function Page() {
               className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
               type="submit"
             >
-              Generate your bio &rarr;
+              Générez votre fête &rarr;
             </button>
           )}
           {isLoading && (
