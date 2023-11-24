@@ -23,9 +23,9 @@ export default function Footer() {
       </div>
       <div className="flex space-x-4 pb-4 sm:pb-0">
         <Link
-          href="https://twitter.com/nutlope"
+          href="https://twitter.com/ElliotVaucher"
           className="group"
-          aria-label="Nutlope Twitter"
+          aria-label="Elliot Twitter"
         >
           <svg
             aria-hidden="true"
@@ -35,7 +35,7 @@ export default function Footer() {
           </svg>
         </Link>
         <Link
-          href="https://github.com/Nutlope/twitterbio"
+          href="https://github.com/elliotvaucher/partykit"
           className="group"
           aria-label="GitHub"
         >
