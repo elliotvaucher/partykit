@@ -141,26 +141,18 @@ export default function Page() {
                 </h2>
               </div>
               <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
-                {generatedBios
-                  .substring(generatedBios.indexOf('1') + 3)
-                  .split('2.')
-                  .map((generatedBio) => {
-                    return (
-                      <div
-                        className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
-                        onClick={() => {
-                          navigator.clipboard.writeText(generatedBio);
-                          toast('Fête prête à être collée', {
-                            icon: '✂️',
-                          });
-                        }}
-                        key={generatedBio}
-                      >
-                        <p>{generatedBio}</p>
-                      </div>
-                    );
-                  })}
+              <div
+                className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
+                onClick={() => {
+                  navigator.clipboard.writeText(generatedBios);
+                  toast('Fête prête à être collée', {
+                    icon: '✂️',
+                  });
+                }}
+              >
+                <p>{generatedBios}</p>
               </div>
+            </div>
             </>
           )}
         </output>
