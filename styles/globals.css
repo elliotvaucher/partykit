@@ -11,6 +11,10 @@
   margin-right: 2px;
 }
 
+.rainbow-button {
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+
 .loading span {
   animation-name: blink;
   animation-duration: 1.4s;

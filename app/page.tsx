@@ -33,11 +33,11 @@ export default function Page() {
       },
     });
 
-  const onSubmit = (e: any) => {
+/*   const onSubmit = (e: any) => {
     setBio(input);
     handleSubmit(e);
     launchConfetti();
-  };
+  }; */
 
   const launchConfetti = () => {
     confetti({
@@ -62,6 +62,15 @@ export default function Page() {
     e.preventDefault();
     // Handle the email submission logic here
     setShowFullBio(true); // This will display the rest of the content
+  };
+
+  const [lastInput, setLastInput] = useState('');
+
+  const onSubmit = (e: any) => {
+    setBio(input);
+    setLastInput(input); // Update the lastInput state with the current input
+    handleSubmit(e);
+    launchConfetti();
   };
 
   return (
@@ -104,7 +113,7 @@ export default function Page() {
             rows={4}
             className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black my-5"
             placeholder={
-              'e.g. Marc a 10 ans et adore les dinosaures. Il aimerait inviter 10 amis à son anniversaire.'
+            lastInput || 'e.g. Marc a 10 ans et adore les dinosaures. Il aimerait inviter 10 amis à son anniversaire.'
             }
           />
           <div className="flex mb-5 items-center space-x-3">
@@ -163,11 +172,11 @@ export default function Page() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
+                  placeholder="Entrez votre mail"
                   className="border p-2 rounded-lg"
                   required
                 />
-                <button type="submit" className="bg-blue-500 text-white rounded-lg p-2 ml-2">
+                <button type="submit" className="rainbow-button text-white rounded-lg p-2 ml-2">
                   Voir la suite
                 </button>
               </form>
