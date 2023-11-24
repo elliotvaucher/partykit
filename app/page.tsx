@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import Github from '../components/GitHub';
 import Header from '../components/Header';
 import { useChat } from 'ai/react';
+import confetti from 'canvas-confetti';
 
 export default function Page() {
   const [bio, setBio] = useState('');
@@ -34,6 +35,16 @@ export default function Page() {
   const onSubmit = (e: any) => {
     setBio(input);
     handleSubmit(e);
+    launchConfetti();
+  };
+
+  const launchConfetti = () => {
+    confetti({
+      angle: 90,
+      spread: 45,
+      particleCount: 50,
+      origin: { x: 0.5, y: 0.5 }
+    });
   };
 
   const lastMessage = messages[messages.length - 1];
@@ -94,6 +105,7 @@ export default function Page() {
             <button
               className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
               type="submit"
+              onClick={launchConfetti}
             >
               Générez votre fête &rarr;
             </button>
@@ -125,7 +137,7 @@ export default function Page() {
                   className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto"
                   ref={bioRef}
                 >
-                  Your generated bios
+                  Votre fête
                 </h2>
               </div>
               <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">

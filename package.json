@@ -12,6 +12,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@vercel/analytics": "^0.1.8",
     "ai": "^2.1.21",
+    "canvas-confetti": "^1.9.1",
     "next": "^13.4.10",
     "openai-edge": "^1.2.0",
     "react": "18.2.0",
@@ -21,6 +22,7 @@
     "react-use-measure": "^2.1.1"
   },
   "devDependencies": {
+    "@types/canvas-confetti": "^1.6.3",
     "@types/node": "18.11.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
