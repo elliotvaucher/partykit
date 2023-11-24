@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     messages: [
       {
         role: 'user',
-        content: `Générez un plan de fête d'anniversaire pour enfants complet basé sur la description de la fête : ${bio}. Incluez un résumé de l'événement, des recettes et boissons, des idées de déguisements, des idées de jeux, une liste de courses, et une playlist musicale. Créez également un message d'invitation. Assurez-vous que le plan soit détaillé, créatif et adapté aux fêtes pour enfants.`,
+        content: `Génère un plan de fête d'anniversaire ${vibe} pour enfants complet basé sur la description de la fête : ${bio}. Incluez un résumé de l'événement, des recettes et boissons, des idées de déguisements, des idées de jeux, une liste de courses, et une playlist musicale. Créez également un message d'invitation. Assurez-vous que le plan soit détaillé, créatif et adapté aux fêtes pour enfants. Important : formate le texte en markdown.`,
       },
     ],
   });

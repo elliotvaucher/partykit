@@ -9,6 +9,7 @@ import Github from '../components/GitHub';
 import Header from '../components/Header';
 import { useChat } from 'ai/react';
 import confetti from 'canvas-confetti';
+import ReactMarkdown from 'react-markdown';
 
 export default function Page() {
   const [bio, setBio] = useState('');
@@ -49,6 +50,19 @@ export default function Page() {
 
   const lastMessage = messages[messages.length - 1];
   const generatedBios = lastMessage?.role === "assistant" ? lastMessage.content : null;
+
+  const [showFullBio, setShowFullBio] = useState(false);
+  const [email, setEmail] = useState('');
+
+  // Handle the possibility of generatedBios being null
+  const halfwayIndex = generatedBios ? Math.ceil(generatedBios.length / 2) : 0;
+  const firstHalfBio = generatedBios ? generatedBios.substring(0, halfwayIndex) : '';
+  const secondHalfBio = generatedBios ? generatedBios.substring(halfwayIndex) : '';
+  const handleEmailSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Handle the email submission logic here
+    setShowFullBio(true); // This will display the rest of the content
+  };
 
   return (
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
@@ -141,18 +155,25 @@ export default function Page() {
                 </h2>
               </div>
               <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
-              <div
-                className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
-                onClick={() => {
-                  navigator.clipboard.writeText(generatedBios);
-                  toast('Fête prête à être collée', {
-                    icon: '✂️',
-                  });
-                }}
-              >
-                <p>{generatedBios}</p>
-              </div>
-            </div>
+          <div className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border">
+            <ReactMarkdown>{showFullBio ? generatedBios : firstHalfBio}</ReactMarkdown>
+            {!showFullBio && (
+              <form onSubmit={handleEmailSubmit} className="mt-4">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="border p-2 rounded-lg"
+                  required
+                />
+                <button type="submit" className="bg-blue-500 text-white rounded-lg p-2 ml-2">
+                  Voir la suite
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
             </>
           )}
         </output>
