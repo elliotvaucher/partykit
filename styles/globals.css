@@ -15,6 +15,10 @@
   background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
 }
 
+.button {
+  background-color: black;
+}
+
 .loading span {
   animation-name: blink;
   animation-duration: 1.4s;

@@ -77,15 +77,6 @@ export default function Page() {
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Header />
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
-        <a
-          className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-5"
-          href="https://github.com/elliotvaucher/partykit"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Github />
-          <p>Star on GitHub</p>
-        </a>
         <h1 className="sm:text-6xl text-4xl max-w-[708px] font-bold text-slate-900">
           Votre fête d'anniversaire en un clic.
         </h1>
@@ -176,7 +167,7 @@ export default function Page() {
                   className="border p-2 rounded-lg"
                   required
                 />
-                <button type="submit" className="rainbow-button text-white rounded-lg p-2 ml-2">
+                <button type="submit" className="button text-white rounded-lg p-2 ml-2">
                   Voir la suite
                 </button>
               </form>

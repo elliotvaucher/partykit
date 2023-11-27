@@ -20,7 +20,8 @@
     "react-hook-form": "^7.42.0",
     "react-hot-toast": "^2.4.1",
     "react-markdown": "^9.0.1",
-    "react-use-measure": "^2.1.1"
+    "react-use-measure": "^2.1.1",
+    "supports-color": "^9.4.0"
   },
   "devDependencies": {
     "@types/canvas-confetti": "^1.6.3",
