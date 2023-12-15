@@ -1,0 +1,27 @@
+/* rainbow.css */
+
+/* Define rainbow colors */
+.rainbow-text {
+    background: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .rainbow-button {
+    background: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  /* Add rainbow colors to other elements as needed */
+  .rainbow-border {
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    background-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff);
+  }
+  
+  /* Add more rainbow styles as necessary */
+  

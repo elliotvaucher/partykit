@@ -10,6 +10,8 @@ import Header from '../components/Header';
 import { useChat } from 'ai/react';
 import confetti from 'canvas-confetti';
 import ReactMarkdown from 'react-markdown';
+import '../styles/rainbow.css'; 
+import PricingCard from '../components/PricingCard';
 
 export default function Page() {
   const [bio, setBio] = useState('');
@@ -77,7 +79,7 @@ export default function Page() {
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Header />
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
-        <h1 className="sm:text-6xl text-4xl max-w-[708px] font-bold text-slate-900">
+        <h1 className="sm:text-6xl text-4xl max-w-[708px] font-bold text-slate-900 rainbow-text">
           Votre fête d'anniversaire en un clic.
         </h1>
         <p className="text-slate-500 mt-5">47,118 anniversaires organisés.</p>
@@ -107,13 +109,13 @@ export default function Page() {
             lastInput || 'e.g. Marc a 10 ans et adore les dinosaures. Il aimerait inviter 10 amis à son anniversaire.'
             }
           />
-          <div className="flex mb-5 items-center space-x-3">
+{/*           <div className="flex mb-5 items-center space-x-3">
             <Image src="/2-black.png" width={30} height={30} alt="1 icon" />
             <p className="text-left font-medium">Sélectionnez l'ambiance.</p>
           </div>
           <div className="block">
             <DropDown vibe={vibe} setVibe={(newVibe) => setVibe(newVibe)} />
-          </div>
+          </div> */}
 
           {!isLoading && (
             <button
@@ -177,6 +179,7 @@ export default function Page() {
             </>
           )}
         </output>
+        <PricingCard />
       </main>
       <Footer />
     </div>
